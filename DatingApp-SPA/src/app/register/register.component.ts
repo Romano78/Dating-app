@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
 
   register() {
     this.authSevice.register(this.model)
-    .subscribe(() =>{
+    .subscribe(() => {
       console.log('Registration succesul');
     }, error => {
       console.log(error);
