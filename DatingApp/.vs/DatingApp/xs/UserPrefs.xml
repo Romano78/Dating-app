@@ -1,10 +1,22 @@
 ﻿<Properties StartupConfiguration="{C7542005-BFB5-422F-875A-A138009FDD61}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+    <Files>
+      <File FileName="Program.cs" Line="23" Column="45" />
+      <File FileName="Startup.cs" Line="21" Column="25" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DatingApp" expanded="True">
-            <Node name="DatingApp" expanded="True" selected="True" />
+            <Node name="DatingApp" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="FrameworkReferences" expanded="True" />
+                <Node name="PackageDependencies" expanded="True">
+                  <Node name="Microsoft.EntityFrameworkCore.Sqlite" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Startup.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
