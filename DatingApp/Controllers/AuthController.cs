@@ -49,6 +49,7 @@ namespace DatingApp.Controllers
 
         public async Task<IActionResult> Login(UserForLoginDto userforLoginDto)
         {
+    
             var userFromRepo = await _repo.Login(userforLoginDto.Username.ToLower(), userforLoginDto.Password);
 
             if (userFromRepo == null)
@@ -57,7 +58,7 @@ namespace DatingApp.Controllers
             var claims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
-            new Claim(ClaimTypes.Name, userFromRepo.Username),
+                new Claim(ClaimTypes.Name, userFromRepo.Username),
             };
             
             var Key = new SymmetricSecurityKey(Encoding.UTF8
