@@ -28,7 +28,7 @@ namespace DatingApp.Data
 
         private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
         {
-        using(var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
+            using(var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
             {
                 var ComputeHash = hmac.ComputeHash(System.Text.
                 Encoding
@@ -36,7 +36,7 @@ namespace DatingApp.Data
                 .GetBytes(password));
                 for(int i = 0; i < ComputeHash.Length; i++)
                 {
-                    if (ComputeHash[i] != ComputeHash[i]) return false;
+                    if (ComputeHash[i] != passwordHash[i]) return false;
                 }
                 return true;
             }
