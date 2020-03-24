@@ -1,5 +1,5 @@
 <div class="div container mt-5">
-  <div *ngIf="!registerMode" style="text-align: center;">
+  <div *ngIf="!registerMode && !loggedIn()" style="text-align: center;">
     <h1>Find your match</h1>
     <p class="lead">
       Come on in to view your matches ... All you need to do is sign up!
@@ -19,6 +19,14 @@
       </app-register>
       </div>
     </div>
+  </div>
+  <div 
+    *ngIf="loggedIn()"
+    class="div text-center"
+    >
+    <h1>Welcolme 
+      {{authService.decodedToken.unique_name | titlecase}}
+    </h1>
   </div>
 </div>
 
