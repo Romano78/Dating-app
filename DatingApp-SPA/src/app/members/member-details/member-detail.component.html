@@ -1,5 +1,8 @@
 <div class="container mt-4">
   <div class="row">
+      <h1>{{user.knownAs}}</h1>
+  </div>
+  <div class="row">
     <div class="col-sm-4">
       <div class="card">
         <img class ="card-img-top img-thumbnail"src="{{user.photoUrl}}" alt="{{user.knownAs}}">
@@ -8,7 +11,6 @@
             <strong>Location</strong>
             <p>{{user.city}}, {{user.country}}</p>
           </div>
-
           <div> 
             <strong>Age:</strong>
             <p>{{user.age}}</p>
@@ -21,14 +23,14 @@
             <strong>Member Since:</strong>
             <p>{{user.created}}</p>
           </div>
-      </div>
-      <div class="card-footer">
-        <div class="btn-group d-flex">
-          <button class="btn btn-primary w-100">Like</button>
-          <button class="btn btn-info w-100">Messages</button>
+        <div class="card-footer">
+          <div class="btn-group d-flex">
+            <button class="btn btn-primary w-100">Like</button>
+            <button class="btn btn-info w-100">Messages</button>
+          </div>
+        </div>
         </div>
       </div>
-    </div>
     </div>
     <div class="col-sm-8">
       <div class="tab-panel">
@@ -54,3 +56,4 @@
     </div>
   </div>
 </div>
+    

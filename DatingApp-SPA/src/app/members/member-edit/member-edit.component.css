@@ -1,0 +1,29 @@
+.img-thumbnail {
+    margin: 25px;
+    width: 85%;
+    height: 85%;
+}
+.card-body {
+    padding: 0 25px;
+}
+
+.card-footer {
+    padding: 10px 15px;
+    background-color: #fff;
+    border-top: none;
+}
+
+.introduction-bloc {
+    margin-top: 10px;
+}
+
+.looking-for-bloc {
+    margin-top: 10px;
+}
+
+.interests-bloc {
+    margin-top: 10px;
+} 
+.location-details-bloc {
+    margin-top: 10px;
+}

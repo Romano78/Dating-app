@@ -53,7 +53,10 @@
       <div 
         class="dropdown-menu mt-1" *dropdownMenu>
         <a 
-          class="dropdown-item" href="#"><i class="fa fa-user"></i> Edit Profile</a>
+          class="dropdown-item" 
+          [routerLink]="['/member/edit']" 
+          >
+            <i class="fa fa-user"></i> Edit Profile</a>
           <div 
             class="div dropdown-divider">
           </div>
