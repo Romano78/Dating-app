@@ -50,18 +50,18 @@
               </div>
               <div class="looking-for-bloc">
                 <h4>Looking For</h4>
-                <textarea name="LookingFor" rows="6" class="form-control" [(ngModel)]="user.lookigFor"></textarea>
+                <textarea name="lookingFor" rows="6" class="form-control" [(ngModel)]="user.lookingFor"></textarea>
               </div>
              <div class="interests-bloc">
               <h4>Interests</h4>
               <textarea name="interests" rows="6" class="form-control" [(ngModel)]="user.interests"></textarea>
              </div>
              <div class="location-details-bloc">
-              <h4>Location Details:</h4>
+              <h4 class="location-detail-title pb-2">Location Details:</h4>
                 <div class="form-inline d-flex">
-                  <label for="city">City</label>
+                  <label for="city" class="city-form-title pr-2"><strong>City:</strong></label>
                   <input class="form-control" type="text" name="city" [(ngModel)]="user.city">
-                  <label for="city">Country</label>
+                  <label for="country" class="country-form-title pl-2 pr-2">Country:</label>
                   <input class="form-control" type="text" name="country" [(ngModel)]="user.country">
                 </div>
              </div>
