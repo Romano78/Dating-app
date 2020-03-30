@@ -2,7 +2,7 @@ using System;
 
 namespace DatingApp.Dto
 {
-    public class UserForListDto
+    public class UserForUpdateTokenDto
     {
         public int Id { get; set; }  
         public string Username { get; set; }
@@ -19,6 +19,5 @@ namespace DatingApp.Dto
          public string Country { get; set; }
 
          public string PhotoUrl { get; set; }
-
     }
 }
