@@ -14,3 +14,11 @@
     background-color: #fff;
     border-top: none;
 }
+
+.description-title {
+    overflow: scroll;
+}
+
+.member-tabset  {
+    word-wrap: break-word;
+}
