@@ -33,6 +33,8 @@ import { PreventUnsavedChanges } from './_guards/provent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { RelativeTimePipe } from './pipes/relativeTime';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+
 
 
 
@@ -65,6 +67,7 @@ export function tokenGetter() {
       BrowserAnimationsModule,
       TabsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
+      PaginationModule.forRoot(),
       NgxGalleryModule,
       FileUploadModule,
       JwtModule.forRoot(({

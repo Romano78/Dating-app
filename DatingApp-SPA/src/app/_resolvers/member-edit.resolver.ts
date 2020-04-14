@@ -10,7 +10,8 @@ import { AuthService } from '../_services/auth.service';
 @Injectable()
 
 export class MemberEditResolver implements Resolve<User> {
-
+    pageNumber = 1;
+    pageSize = 5;
 
     constructor(private userService: UserService, private router: Router,
                 private alertifyService: AlertifyService, private authService: AuthService) {
