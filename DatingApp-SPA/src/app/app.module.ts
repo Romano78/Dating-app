@@ -36,6 +36,8 @@ import { RelativeTimePipe } from './pipes/relativeTime';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { ListsResolver } from './_resolvers/lists.resolver';
+import { MessageResolver } from './_resolvers/message.resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 
 
@@ -59,6 +61,7 @@ export function tokenGetter() {
       MemberEditComponent,
       PhotoEditorComponent,
       RelativeTimePipe,
+      MemberMessagesComponent,
    ],
    imports: [
       BrowserModule,
@@ -89,6 +92,7 @@ export function tokenGetter() {
       MemberEditResolver,
       PreventUnsavedChanges,
       ListsResolver,
+      MessageResolver,
    ],
    bootstrap: [
       AppComponent
