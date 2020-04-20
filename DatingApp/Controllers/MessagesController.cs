@@ -64,7 +64,9 @@ namespace DatingApp.Controllers
         public async Task<IActionResult> CreateMessage(int userId, 
                     MessageForCreationDto messageForCreationDto)
         {
-             if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+            var sender = await _repo.GetUser(userId);
+
+             if (sender.Id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
             
             messageForCreationDto.SenderId = userId;
@@ -82,7 +84,7 @@ namespace DatingApp.Controllers
             
             if(await _repo.SaveAll())
             {
-                var messageToReturrn = _mapper.Map<MessageForCreationDto>(message);
+                var messageToReturrn = _mapper.Map<MessageToReturnDto>(message);
                 return CreatedAtRoute("GetMessage", new {userId, id = message.Id}, messageToReturrn);
             }
             
@@ -118,7 +120,7 @@ namespace DatingApp.Controllers
             if (messageFromRepo.RecipientId == userId)
                 messageFromRepo.RecipientDeleted = true;
 
-            if (messageFromRepo.SenderDeleted || messageFromRepo.RecipientDeleted)
+            if (messageFromRepo.SenderDeleted && messageFromRepo.RecipientDeleted)
                  _repo.Delete(messageFromRepo);
 
             if (await _repo.SaveAll())
@@ -127,6 +129,26 @@ namespace DatingApp.Controllers
 
             throw new Exception("Error deleting the message");
              
+        }
+
+        [HttpPost("{id}/read")] 
+        public async Task<IActionResult> MarkMessageAsRead(int id, int userId ) {
+
+             if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+
+            var messageFromRepo = await _repo.GetMessage(id);
+
+            if (messageFromRepo.RecipientId != userId)
+                return Unauthorized();
+            
+            messageFromRepo.IsRead = true;
+            messageFromRepo.DateRead = DateTime.Now;
+
+            await _repo.SaveAll();
+
+            return NoContent();
+
         }
     }
 }

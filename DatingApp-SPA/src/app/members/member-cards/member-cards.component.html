@@ -14,7 +14,7 @@
           <i class="fa fa-heart"></i>
         </button></li>
       <li class="list-inline-item">
-        <button class="btn-primary">
+        <button [routerLink]="['/members/', user.id]" [queryParams]="{tab: 3}" class="btn-primary">
           <i class="fa fa-envelope"></i>
         </button></li>
     </ul>
